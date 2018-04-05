@@ -1,3 +1,5 @@
 <% @plans.each do |plan| %>
   <p><%= plan.name %></p>
 <% end %>
+
+<%= link_to "New plan", new_plan_path, class: "btn btn-primary" %>
