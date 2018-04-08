@@ -8,6 +8,13 @@ Bundler.require(*Rails.groups)
 
 module Dtrk
   class Application < Rails::Application
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'app.forestadmin.com'
+        resource '*', headers: :any, methods: :any,
+        expose: ['Content-Disposition']
+      end
+    end
     config.generators do |generate|
       generate.assets false
       generate.helper false

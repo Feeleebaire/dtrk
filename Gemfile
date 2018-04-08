@@ -9,6 +9,9 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem 'forest_liana'
+gem 'rack-cors'
+gem 'data_uri', '~> 0.1.0'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
