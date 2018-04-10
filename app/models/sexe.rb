@@ -1,0 +1,2 @@
+class Sexe < ApplicationRecord
+end

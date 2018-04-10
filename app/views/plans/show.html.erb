@@ -1,1 +1,12 @@
-<h1><%= @plan.name %></h1>
+<div class="container">
+  <h1><%= @plan.name %></h1>
+  <table class="table">
+      <% @publishers.each do |publisher| %>
+      <tr>
+        <td><%= publisher.name %></td>
+        <td><%= publisher.type.name%></td>
+       </tr>
+      <% end %>
+  </table>
+</div>
+

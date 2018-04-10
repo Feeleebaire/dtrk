@@ -6,6 +6,7 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
+    @publishers = Publisher.all
   end
 
   def new
