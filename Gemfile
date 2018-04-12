@@ -11,6 +11,7 @@ gem 'redis'
 gem 'forest_liana'
 gem 'rack-cors'
 gem 'data_uri', '~> 0.1.0'
+gem 'bullet'
 
 
 gem 'autoprefixer-rails'
