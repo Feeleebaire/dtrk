@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408183438) do
+ActiveRecord::Schema.define(version: 20180412202434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "ages", force: :cascade do |t|
-    t.integer "age_min"
-    t.integer "age_max"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "plans", force: :cascade do |t|
     t.bigint "user_id"
@@ -38,8 +31,12 @@ ActiveRecord::Schema.define(version: 20180408183438) do
     t.index ["type_id"], name: "index_publishers_on_type_id"
   end
 
-  create_table "sexes", force: :cascade do |t|
-    t.string "name"
+  create_table "targets", force: :cascade do |t|
+    t.integer "age"
+    t.string "sexe"
+    t.text "csp", default: [], array: true
+    t.text "tag", default: [], array: true
+    t.text "geo", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
