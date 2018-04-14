@@ -8,5 +8,10 @@
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Feeleebaire/dtrk.git",
+  "author": "Philibert Latournerie <philibert.latournerie@hotmail.fr>",
+  "license": "MIT"
 }
