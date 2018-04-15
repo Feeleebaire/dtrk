@@ -59,4 +59,14 @@ h1 {
   left: 50%; /* position the left edge of the element at the middle of the parent */
   transform: translate(-50%, -50%);
 }
+
+.btn_home{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body{
+  background-color: white;
+}
 // Specific CSS for your home-page
