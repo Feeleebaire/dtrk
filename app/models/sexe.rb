@@ -1,2 +1,0 @@
-class Sexe < ApplicationRecord
-end

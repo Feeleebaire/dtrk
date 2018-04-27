@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412202434) do
+ActiveRecord::Schema.define(version: 20180427180032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "media_publishers", force: :cascade do |t|
+    t.bigint "publisher_id"
+    t.string "offre"
+    t.string "type_pub"
+    t.string "format"
+    t.string "emplacement"
+    t.string "rubrique"
+    t.float "tarif"
+    t.string "categorie"
+    t.bigint "target_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["publisher_id"], name: "index_media_publishers_on_publisher_id"
+    t.index ["target_id"], name: "index_media_publishers_on_target_id"
+  end
 
   create_table "plans", force: :cascade do |t|
     t.bigint "user_id"
@@ -64,6 +80,8 @@ ActiveRecord::Schema.define(version: 20180412202434) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "media_publishers", "publishers"
+  add_foreign_key "media_publishers", "targets"
   add_foreign_key "plans", "users"
   add_foreign_key "publishers", "types"
 end
