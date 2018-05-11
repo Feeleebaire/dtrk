@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180427180032) do
+ActiveRecord::Schema.define(version: 20180511153240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20180427180032) do
     t.datetime "updated_at", null: false
     t.index ["publisher_id"], name: "index_media_publishers_on_publisher_id"
     t.index ["target_id"], name: "index_media_publishers_on_target_id"
+  end
+
+  create_table "plan_ads", force: :cascade do |t|
+    t.bigint "media_publisher_id"
+    t.bigint "plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["media_publisher_id"], name: "index_plan_ads_on_media_publisher_id"
+    t.index ["plan_id"], name: "index_plan_ads_on_plan_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -82,6 +91,8 @@ ActiveRecord::Schema.define(version: 20180427180032) do
 
   add_foreign_key "media_publishers", "publishers"
   add_foreign_key "media_publishers", "targets"
+  add_foreign_key "plan_ads", "media_publishers"
+  add_foreign_key "plan_ads", "plans"
   add_foreign_key "plans", "users"
   add_foreign_key "publishers", "types"
 end
