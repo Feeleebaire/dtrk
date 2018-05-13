@@ -2,13 +2,14 @@
 require 'data_uri'
 require 'csv'
 class Forest::MediaPublishersController < ForestLiana::ApplicationController
-  def mark
+  def marko
     uri = URI::Data.new(params.dig('data', 'attributes', 'values', 'bulk_importo'))
     uri.data.force_encoding('utf-8')
     CSV.parse(uri.data, :quote_char => "|").each do |row|
       MediaPublisher.create!({
-        :name => row[0],
-        :publisher_id => 2
+        :publisher_id => 1098,
+        :tarif => row[33],
+        :target_id => 1
      })
     end
     render json: { success: 'Data successfuly imported!' }
