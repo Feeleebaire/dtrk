@@ -6,10 +6,11 @@ class Forest::MediaPublishersController < ForestLiana::ApplicationController
     uri = URI::Data.new(params.dig('data', 'attributes', 'values', 'bulk_importo'))
     uri.data.force_encoding('utf-8')
     CSV.parse(uri.data, :quote_char => "|").each do |row|
-      publisher = Publisher.find_by_name(row[1])
+
+      publisher = Publisher.where(name: row[1]).ids
       MediaPublisher.create!({
-        :publisher_id => publisher.id,
-        :tarif => row[33],
+        :publisher_id => publisher,
+        :tarif => row[21],
         :target_id => 1
      })
     end
