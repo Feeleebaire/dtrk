@@ -9,6 +9,12 @@ class Forest::MediaPublishersController < ForestLiana::ApplicationController
       MediaPublisher.create!({
         :publisher_id => (Publisher.find_by name: row[1]).id,
         :tarif => row[21],
+        :offre => row [5],
+        :type_pub => row [11],
+        :format => row [14],
+        :emplacement => row [],
+        :rubrique => row [],
+        :categorie => row [],
         :target_id => 1
      })
     end
