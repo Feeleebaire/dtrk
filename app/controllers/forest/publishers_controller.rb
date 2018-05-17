@@ -1,4 +1,4 @@
-# /controllers/forest/companies_controller.rb
+# /controllers/forest/publishers_controller.rb
 require 'data_uri'
 require 'csv'
 class Forest::PublishersController < ForestLiana::ApplicationController
