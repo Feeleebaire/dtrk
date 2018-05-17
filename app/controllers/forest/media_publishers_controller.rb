@@ -12,7 +12,8 @@ class Forest::MediaPublishersController < ForestLiana::ApplicationController
         :offre => row [5],
         :type_pub => row [11],
         :format => row [14],
-        :emplacement => row [],
+        :emplacement => row [
+        ],
         :rubrique => row [],
         :categorie => row [],
         :target_id => 1
